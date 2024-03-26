@@ -1,14 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{values.component_id | dump}}
-  {%- if values.description %}
-  description: ${{values.description | dump}}
-  {%- endif %}
-  annotations:
-    github.tfs.toyota.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
-    backstage.io/techdocs-ref: dir:.
+  name: ${{ values.name | dump }}
 spec:
   type: service
-  lifecycle: experimental
   owner: user:guest
+  lifecycle: experimental
